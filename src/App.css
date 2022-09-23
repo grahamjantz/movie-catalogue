@@ -1,9 +1,15 @@
 .App {
-  text-align: center;
+  width: 100vw;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-
-img {
-  width: 200px;
-  height: auto;
+.movielist {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }

@@ -1,0 +1,32 @@
+.movie {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 50px auto;
+    grid-template-areas: 
+                    "image title provider"
+                    "image overview overview";
+    gap: 1em;
+    padding: 1em;
+    width: 100%;
+    max-width: 600px;
+}
+
+.image {
+    grid-area: image;
+    width: 200px;
+    height: auto;
+}
+.title {
+    grid-area: title;
+}
+.overview {
+    grid-area: overview;
+    align-self: top;
+}
+.provider{
+    grid-area: provider;
+}
+
+.provider-logo {
+    width: 50px;
+}
