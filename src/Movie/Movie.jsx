@@ -4,13 +4,13 @@ import './Movie.css'
 import { baseUrl, apiKey } from '../tmdb'
 import { useState } from 'react'
 
-const Movie = ({ movie }) => {
+const Movie = ({ movie, displayOverview, displayProvider, className }) => {
 
   const [providers, setProviders] = useState([])
 
   useEffect(() => {
     fetchProviders();
-  }, []);
+  });
 
   const fetchProviders = async () => {
     const data = await fetch(`${baseUrl}movie/${movie.id}/watch/providers?api_key=${apiKey}`);
@@ -31,12 +31,16 @@ const Movie = ({ movie }) => {
   }
 
   return (
-      <div className='movie'>
-        <img className='image' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.path} />
+      <div className={className}>
+        {
+          movie.poster_path 
+          ? <img className='image' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} /> 
+          : <h6>{movie.title}</h6>
+        }
         <h3 className='title'>{movie.title}</h3>
         {checkProvider()}
-        <h4 className='provider'>{providerName}</h4>
-        <p className='overview'>{movie.overview}</p>
+        <h4 className='provider' style={{display: (displayProvider === true ? 'block' : 'none')}}>{providerName}</h4>
+        <p className='overview' style={{display: (displayOverview === true ? 'block' : 'none')}}>{movie.overview}</p>
       </div>
     );
 }

@@ -1,0 +1,50 @@
+.search-container {
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-bar {
+    height: 2em;
+    width: 100%;
+}
+
+.search-bar input {
+    width: 85%;
+    height: 100%;
+}
+
+.search-bar button {
+    width: 15%;
+    height: 100%;
+}
+
+.search-results {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 2em;
+    padding: 2em;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    background-color: black;
+    color: white;
+}
+
+.search-results img {
+    width: 50px;
+}
+
+.close-search-results {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: transparent;
+    color: white;
+}
+
+.close-search-results:hover {
+    cursor: pointer;
+}

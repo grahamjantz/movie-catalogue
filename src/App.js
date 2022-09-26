@@ -1,16 +1,15 @@
 import './App.css';
-import MovieList from './MovieList/MovieList';
+import NowPlaying from './NowPlaying/NowPlaying';
+import Popular from './Popular/Popular';
 import SearchBar from './SearchBar/SearchBar'
 
 function App() {
-
     
     return (
       <div className="App">
         <SearchBar />
-        <div className='movielist'>
-          <MovieList />
-        </div>
+        <Popular />
+        <NowPlaying />
       </div>
   );
 }
